@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyWeather"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="685" Width="995" Background="Transparent"
+        WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" FontFamily="Ubuntu Condensed">
     <Grid>
-
+       <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="260"/>
+           <ColumnDefinition Width="*"/>   
+       </Grid.ColumnDefinitions>
+        
+        <!--Left side-->
+        <Border CornerRadius="30 0 0 30" Background="#ffffff">
+            
+        </Border>
+        
+        <!--Rirht side-->
+        <Border CornerRadius="0 30 30 0"  Grid.Column="1" MouseDown="Border_MouseDown" Background="#F6F6F6" >
+            <StackPanel>
+                <!--TextBox search-->
+                <Border BorderBrush="#d9d9d9" BorderThickness="1" CornerRadius="15" Width="200" HorizontalAlignment="Center" Margin="0 35 0 0 ">
+                    <Grid Margin="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image/>
+                        <TextBlock x:Name="textSearch" MouseDown="textSearch_MouseDown" Text="Search ..." Style="{StaticResource textHint}"/>
+                        <TextBox Name="txtSearch" TextChanged="txtSearch_TextChanged" Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
