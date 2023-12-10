@@ -30,15 +30,15 @@ namespace MyWeather
 
         private void textSearch_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            txtSearch.Focus();
+            TxtSearch.Focus();
         }
 
         private void txtSearch_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtSearch.Text) && txtSearch.Text.Length > 0)
-                textSearch.Visibility = Visibility.Collapsed;
+            if (!string.IsNullOrEmpty(TxtSearch.Text) && TxtSearch.Text.Length > 0)
+                TextSearch.Visibility = Visibility.Collapsed;
             else
-                textSearch.Visibility = Visibility.Visible;
+                TextSearch.Visibility = Visibility.Visible;
         }
 
     }

@@ -4,17 +4,43 @@
              xmlns:local="clr-namespace:MyWeather"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
-        <Style x:Key="textHint" TargetType="TextBlock">
-            <Setter Property ="Foreground" Value="#acb0af"/>
-            <Setter Property="FontSize" Value="14"/>
+        <Style x:Key="TextNormal" TargetType="TextBlock">
+            <Setter Property ="Foreground" Value="#000000"/>
+            <Setter Property="FontSize" Value="30"/>
             <Setter Property="Grid.Column" Value="1"/>
             <Setter Property="Panel.ZIndex" Value="1"/>
             <Setter Property="Margin" Value="10 0 0 0"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+        
+        <Style x:Key="TextHint" TargetType="TextBlock">
+            <Setter Property ="Foreground" Value="#616161"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="Panel.ZIndex" Value="1"/>
+            <Setter Property="Margin" Value="10 0 0 0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="TextBlockHeader" TargetType="TextBlock">
+            <Setter Property ="Foreground" Value="#181818"/>
+            <Setter Property="FontSize" Value="60"/>
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="Panel.ZIndex" Value="1"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="TextTime" TargetType="TextBlock">
+            <Setter Property ="Foreground" Value="#616161"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="Panel.ZIndex" Value="1"/>
+            <Setter Property="Margin" Value="10 0 0 0"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        
          
-        <Style x:Key="textBox" TargetType="TextBox">
+        <Style x:Key="TextBox" TargetType="TextBox">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#878787"/>
             <Setter Property="FontSize" Value="14"/>
