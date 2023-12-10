@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:MyWeather"
         mc:Ignorable="d"
         Title="MainWindow" Height="5978" Width="1280" Background="Transparent"
-        WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" FontFamily="Ubuntu Condensed">
+        WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" FontFamily="Ubuntu">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -58,7 +59,7 @@
 
         <!-- Прогноз погоды на сегодня -->
         <Border Grid.Row="2" CornerRadius="0" Background="#FFFFFF">
-            <Border Grid.Column="1" BorderBrush="#616161" BorderThickness="4" CornerRadius="75" Width="1200" Height="436" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,20,40,0">
+            <Border BorderBrush="#616161" BorderThickness="4" CornerRadius="75" Width="1200" Height="436" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,20,40,0">
                 <StackPanel HorizontalAlignment="Center">
                     <TextBlock Text="ПРОГНОЗ НА СЕГОДНЯ" Style="{StaticResource TextBlockHeader}" HorizontalAlignment="Center" Margin="0 30 0 0"/>
                     
@@ -110,8 +111,193 @@
             </Border>
         </Border>
         
+        
+        <!-- Прогноз погоды на 10 дней -->
         <Border Grid.Row="3" CornerRadius="0" Background="#FFFFFF">
+            <TextBlock Margin="40 100 0 0">
+                <Run FontSize="50" FontWeight="Medium">ПРОГНОЗ НА 10 ДНЕЙ</Run>
+            </TextBlock>
+        </Border>
+        
+        <Border Grid.Row="4" CornerRadius="0" Background="#FFFFFF">
+            
+            <Border BorderBrush="#C7C7C7" BorderThickness="1" CornerRadius="75" Width="1050" Height="430" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,50,40,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Color="#C0C0C0"/>
+                </Border.Effect>
                 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackPanel Grid.Column="0">
+                        <Grid>
+                            <TextBlock Text="13" Style="{StaticResource TextDate}"/>
+                            <TextBlock Style="{StaticResource TextDay}">
+                                ноября,<LineBreak/>
+                                сегодня
+                            </TextBlock>
+                        </Grid>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Column="1" Width="300" Margin="35 10 0 0">
+                        <Grid>
+                            <Image Source="icons/Drizzle.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 20 0 0"/>
+                            <TextBlock Text="Сильный дождь" Style="{StaticResource TextDescIcon}"/>
+                            <TextBlock Text="Магнитное поле:" Style="{StaticResource TextMagArea}"/>
+                            <TextBlock Text="спокойное" Style="{StaticResource TextMagArea}" Foreground="#000000" Margin="180 250 0 0"/>
+                            <TextBlock Text="УФ-индекс:" Style="{StaticResource TextUfIndex}"/>
+                            <TextBlock Text="0 (низкий)" Style="{StaticResource TextMagArea}" Foreground="#000000" Margin="130 320 0 0"/>
+                            <Image Source="icons/sunrise.png" Width="25" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 0 0 -50"/>
+                            <TextBlock Text="8:50" Style="{StaticResource TextMagArea}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30 0 0 -50"/>
+                            <Image Source="icons/sunset.png" Width="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 70 -50"/>
+                            <TextBlock Text="16:34" Style="{StaticResource TextMagArea}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 17 -50"/>
+                        </Grid>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Column="2" VerticalAlignment="Center" Margin="40 0 0 0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Ветер" Style="{StaticResource TextDescIcon}" Margin="10 0 0 0"/>
+                            </StackPanel>
+                            
+                            <Grid Grid.Row="1" Margin="15 10 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Grid.Column="0" Text="Утро" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="1" Text="День" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="2" Text="Вечер" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="3" Text="Ночь" Style="{StaticResource TextDescWeather}"/>
+                            </Grid>
+                            
+                            <Grid Grid.Row="2" Margin="15 0 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Grid.Column="0" Text="4 м/c" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="1" Text="5 м/c" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="2" Text="5 м/c" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="3" Text="5 м/c" Style="{StaticResource TextNumWeather}"/>
+                            </Grid>
+                        </Grid>
+                        
+                        
+                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Влажность" Style="{StaticResource TextDescIcon}" Margin="10 20 0 0"/>
+                            </StackPanel>
+                            
+                            <Grid Grid.Row="1" Margin="15 10 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Grid.Column="0" Text="Утро" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="1" Text="День" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="2" Text="Вечер" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="3" Text="Ночь" Style="{StaticResource TextDescWeather}"/>
+                            </Grid>
+                            
+                            <Grid Grid.Row="2" Margin="15 0 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Grid.Column="0" Text="96%" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="1" Text="92%" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="2" Text="88%" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="3" Text="94%" Style="{StaticResource TextNumWeather}"/>
+                            </Grid>
+                        </Grid>
+                        
+                        
+                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Давление" Style="{StaticResource TextDescIcon}" Margin="10 20 0 0"/>
+                            </StackPanel>
+                            
+                            <Grid Grid.Row="1" Margin="15 10 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Grid.Column="0" Text="Утро" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="1" Text="День" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="2" Text="Вечер" Style="{StaticResource TextDescWeather}"/>
+                                <TextBlock Grid.Column="3" Text="Ночь" Style="{StaticResource TextDescWeather}"/>
+                            </Grid>
+                            
+                            <Grid Grid.Row="2" Margin="15 0 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Grid.Column="0" Text="749" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="1" Text="748" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="2" Text="746" Style="{StaticResource TextNumWeather}"/>
+                                <TextBlock Grid.Column="3" Text="744" Style="{StaticResource TextNumWeather}"/>
+                            </Grid>
+                             
+                             <Grid Grid.Row="3" Margin="15 0 0 0">
+                                 <Grid.ColumnDefinitions>
+                                     <ColumnDefinition/>
+                                     <ColumnDefinition/>
+                                     <ColumnDefinition/>
+                                     <ColumnDefinition/>
+                                 </Grid.ColumnDefinitions>
+                                
+                                 <TextBlock Grid.Column="0" Text="мм рт.ст" Style="{StaticResource TextDescWeather}"/>
+                                 <TextBlock Grid.Column="1" Text="мм рт.ст" Style="{StaticResource TextDescWeather}"/>
+                                 <TextBlock Grid.Column="2" Text="мм рт.ст" Style="{StaticResource TextDescWeather}"/>
+                                 <TextBlock Grid.Column="3" Text="мм рт.ст" Style="{StaticResource TextDescWeather}"/>
+                             </Grid>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Border>
     </Grid>
 </Window>
